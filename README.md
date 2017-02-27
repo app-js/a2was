@@ -19,6 +19,8 @@
 [![devDependency Status](https://david-dm.org/JonnyBGod/angular2-webpack-advance-starter/dev-status.svg)](https://david-dm.org/JonnyBGod/angular2-webpack-advance-starter#info=devDependencies)
 [![Gitter Chat](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/angular2-webpack-advance-starter/Lobby)
 
+Some changes by app-js.
+
 This is an advance starter project for Angular 2 apps based on [AngularClass's](https://github.com/AngularClass) [angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter) and [Nathan Walker's](https://github.com/NathanWalker) [angular2-seed-advanced](https://github.com/NathanWalker/angular2-seed-advanced).
 
 I would like to thank both for their great work and collaboration. Please refer to both projects' pages for extra documentation.
