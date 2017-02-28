@@ -88,13 +88,13 @@ app.on('ready', () => {
     submenu: [{
       label: 'Learn More',
       click: () => {
-        shell.openExternal('https://github.com/JonnyBGod/angular2-webpack-advance-starter');
+        shell.openExternal('https://github.com/app-js/a2was');
       }
     }, {
         label: 'Issues',
         click: () => {
           shell.openExternal(
-            'https://github.com/JonnyBGod/angular2-webpack-advance-starter/issues'
+            'https://github.com/app-js/a2was/issues'
           );
         }
       }, {
@@ -116,13 +116,6 @@ app.on('ready', () => {
         label: 'Electron Docs',
         click: () => {
           shell.openExternal('https://github.com/atom/electron/tree/master/docs');
-        }
-      }, {
-        label: 'Codeology Visualization',
-        click: () => {
-          shell.openExternal(
-            'http://codeology.braintreepayments.com/JonnyBGod/angular2-webpack-advance-starter'
-          );
         }
       }]
   };

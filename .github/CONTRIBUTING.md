@@ -1,6 +1,6 @@
 ## Read and contribute to the Wiki
 
-Make sure you read the [Wiki](https://github.com/JonnyBGod/angular2-webpack-advance-starter/wiki).
+Make sure you read the [Wiki](https://github.com/app-js/a2was/wiki).
 
 ## Submitting Pull Requests
 
