@@ -91,7 +91,7 @@
     "webdriver:update": "webdriver-manager update",
     "webpack-dev-server": "webpack-dev-server",
     "webpack": "webpack",
-    "start:desk": "concurrently \"npm run server:dev:desktop\" \"SET NODE_ENV=development && electron ./dist/main.desktop.js\"",
+    "start:desk": "concurrently \"npm run server:dev\" \"electron ./dist/main.desktop.js\"",
     "dev:win:desk:start": "npm run clean:dll && npm run build:dev && npm run start:desktop:windows"
   },
   "dependencies": {
@@ -207,6 +207,11 @@
       "target": [
         "AppImage",
         "snap"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis"
       ]
     },
     "asar": true,
