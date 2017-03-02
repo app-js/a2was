@@ -11,6 +11,9 @@
  * file for our client, when we run test, it will compile and bundle them
  * all here! Crazy huh. So we need to do some setup
  */
+ 
+console.log("wp ---> ./config/spec-bundle");
+
 Error.stackTraceLimit = Infinity;
 
 require('core-js/es6');

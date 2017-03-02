@@ -5,6 +5,8 @@
 require('ts-node/register');
 var helpers = require('./helpers');
 
+console.log("wp ---> ./config/protractor.conf");
+
 exports.config = {
   baseUrl: 'http://localhost:3000/',
 

@@ -32,6 +32,8 @@ const METADATA = {
   isDevServer: helpers.isWebpackDevServer()
 };
 
+console.log("wp ---> ./config/webpack.common");
+
 /*
  * Webpack configuration
  *

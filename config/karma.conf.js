@@ -1,6 +1,7 @@
 /**
  * @author: @AngularClass
  */
+console.log("wp ---> ./config/karma.conf");
 
 module.exports = function(config) {
   var testWebpackConfig = require('./advance/webpack.web.test.js')({ env: 'test' });

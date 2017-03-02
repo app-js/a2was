@@ -6,9 +6,9 @@ import { Store } from '@ngrx/store';
 import { TranslateService } from 'ng2-translate';
 
 // app
-import { Analytics, AnalyticsService } from 'shared/analytics/index';
-import { WindowService } from 'shared/core/services/index';
-import { ILang } from 'shared/core/interfaces/index';
+import { Analytics, AnalyticsService } from '../../analytics/index';
+import { WindowService } from '../../core/services/index';
+import { ILang } from '../../core/interfaces/index';
 
 // module
 import { CATEGORY } from '../common/category.common';

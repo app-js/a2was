@@ -13,6 +13,8 @@
  * Will not prefix the publicPath on href (href attributes are added by default
  *
  */
+console.log("wp ---> ./config/head-config.common");
+
 module.exports = {
   link: [
     /** <link> tags for "apple-touch-icon" (AKA Web Clips). **/

@@ -18,6 +18,8 @@ const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
  */
 const ENV = process.env.ENV = process.env.NODE_ENV = 'test';
 
+console.log("wp ---> ./config/webpack.test");
+
 /**
  * Webpack configuration
  *

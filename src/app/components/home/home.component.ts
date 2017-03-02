@@ -6,9 +6,9 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
 // app
-import { RouterExtensions } from 'shared/core/services/index';
-import { IAppState, getNames } from 'shared/ngrx/index';
-import * as nameList from 'shared/sample/index';
+import { RouterExtensions } from '../../shared/core/services/index';
+import { IAppState, getNames } from '../../shared/ngrx/index';
+import * as nameList from '../../shared/sample/index';
 
 declare var NSIndexPath;
 declare var UITableViewScrollPosition;

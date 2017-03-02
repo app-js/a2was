@@ -2,7 +2,12 @@
   "name": "a2was",
   "version": "0.0.1",
   "description": "Testing webpack.",
-  "keywords": ["angular2","webpack","typescript","electron"],
+  "keywords": [
+    "angular2",
+    "webpack",
+    "typescript",
+    "electron"
+  ],
   "author": "J S",
   "homepage": "https://github.com/app-js/a2was",
   "license": "MIT",
@@ -142,6 +147,7 @@
     "concurrently": "^3.3.0",
     "copy-webpack-plugin": "^4.0.0",
     "css-loader": "^0.26.0",
+    "debug-webpack-plugin": "^0.1.0",
     "devtron": "^1.4.0",
     "electron": "^1.5.0",
     "electron-builder": "^11.7.0",
@@ -209,7 +215,7 @@
         "snap"
       ]
     },
-    "asar": true,
+    "asar": false,
     "directories": {
       "buildResources": "src/assets",
       "output": "desktop",

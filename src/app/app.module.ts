@@ -28,7 +28,7 @@ import { AppState, InternalStateType } from './app.service';
 // Advance
 import { ADVANCE_MODULES } from './app.advance';
 // App
-import { HomeModule } from 'components/home/home.module';
+import { HomeModule } from './components/home/home.module';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';

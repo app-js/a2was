@@ -16,6 +16,8 @@ const GIT_REMOTE_NAME = 'origin';
 const COMMIT_MESSAGE = 'Updates';
 const GH_REPO_NAME = ghDeploy.getRepoName(GIT_REMOTE_NAME);
 
+console.log("wp ---> ./config/webpack.github-deploy -> Merge: 'webpackConfig'");
+
 module.exports = function (options) {
   const webpackConfigFactory = ghDeploy.getWebpackConfigModule(options); // the settings that are common to prod and dev
   const webpackConfig = webpackConfigFactory(options);

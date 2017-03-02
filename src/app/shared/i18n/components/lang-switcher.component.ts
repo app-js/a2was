@@ -6,11 +6,11 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs/Subscription';
 
 // app
-import { Config } from 'shared/core/index';
-import { LogService } from 'shared/core/services/index';
-import { ILang } from 'shared/core/interfaces/index';
-import { IAppState } from 'shared/ngrx/index';
-import { ElectronEventService } from 'shared/electron/index';
+import { Config } from '../../core/index';
+import { LogService } from '../../core/services/index';
+import { ILang } from '../../core/interfaces/index';
+import { IAppState } from '../../ngrx/index';
+import { ElectronEventService } from '../../electron/index';
 import * as multilingual from '../index';
 
 @Component({

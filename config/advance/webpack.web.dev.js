@@ -19,6 +19,8 @@ let webpackConfig = simpleWebDevConfig({env: ENV});
 // remove the instance of HtmlWebpackPlugin.
 helpers.removePlugins(webpackConfig.plugins, [HtmlWebpackPlugin]);
 
+console.log("wp ---> ./config/advance/webpack.web.dev");
+
 /**
  * Webpack configuration
  *

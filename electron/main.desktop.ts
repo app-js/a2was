@@ -1,5 +1,7 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
-console.log(`Electron launching with NODE_ENV: ${process.env.NODE_ENV}`);
+console.log(`main.desktop.ts -> Electron launching with NODE_ENV: ${process.env.NODE_ENV}`);
+
+console.log("3");
 
 // electron
 const electron: any = require('electron');
@@ -12,6 +14,8 @@ let mainWindow: any = undefined;
 let template: any;
 let menu: any;
 
+console.log("2");
+
 // app
 import { DesktopConfig } from 'shared/electron/index';
 
@@ -22,18 +26,23 @@ import { DesktopConfig } from 'shared/electron/index';
   autoSubmit: true
 });*/
 
+console.log("1");
+
 if (process.env.NODE_ENV === 'development') {
   require('electron-debug')();
 }
 
+console.log("0");
+
 app.on('window-all-closed', () => {
+  console.log("on window-all-closed");
   if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
 app.on('ready', () => {
-
+  console.log("on ready");
   // Tell Electron where to load the entry point from
   if (process.env.NODE_ENV === 'development') {
     // Initialize the window to our specified dimensions
@@ -45,11 +54,13 @@ app.on('ready', () => {
       }
     });
 
+    console.log("going http: " + 'http://localhost:3000/');
     mainWindow.loadURL('http://localhost:3000/');
   } else {
     // Initialize the window to our specified dimensions
     mainWindow = new browserWindow({ width: 900, height: 620 });
 
+    console.log("going file: " + 'file://' + __dirname + '/index.html');
     mainWindow.loadURL('file://' + __dirname + '/index.html');
   }
 

@@ -7,10 +7,10 @@ import './operators';
 import { ConfigService } from 'ng2-config';
 
 // app
-import { AnalyticsService } from 'shared/analytics/index';
-import { MultilingualService } from 'shared/i18n/index';
-import { Config } from 'shared/core/index';
-import { LogService, AppService } from 'shared/core/services/index';
+import { AnalyticsService } from '../shared/analytics/index';
+import { MultilingualService } from '../shared/i18n/index';
+import { Config } from '../shared/core/index';
+import { LogService, AppService } from '../shared/core/services/index';
 
 /**
  * This class represents the main application component.
