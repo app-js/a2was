@@ -8,7 +8,7 @@
     "sourceMap": true,
     "noEmitHelpers": true,
     "lib": ["es6", "dom"],
-    "strictNullChecks": false,
+    "strictNullChecks": false
   },
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,

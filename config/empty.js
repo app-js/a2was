@@ -1,3 +1,5 @@
+console.log("wp ---> ./config/empty");
+
 module.exports = {
   NgProbeToken: {},
   HmrState: function() {},

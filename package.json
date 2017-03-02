@@ -214,7 +214,7 @@
         "nsis"
       ]
     },
-    "asar": true,
+    "asar": false,
     "directories": {
       "buildResources": "src/assets",
       "output": "desktop",

@@ -33,6 +33,8 @@ const METADATA = webpackMerge(commonConfig({
   HMR: false
 });
 
+console.log("wp ---> ./config/webpack.prod -> Merge: ./webpack.common.js");
+
 module.exports = function (env) {
   return webpackMerge(commonConfig({
     env: ENV
@@ -114,6 +116,7 @@ module.exports = function (env) {
           include: [helpers.root('src', 'styles')]
         },
 
+        { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url-loader?limit=10000' }
       ]
 
     },

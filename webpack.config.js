@@ -2,6 +2,9 @@
  * @author: @AngularClass
  */
 
+console.log("wp ---> env: " + process.env.NODE_ENV + " (undefined = development)");
+console.log("wp ---> ./config/webpack.config");
+
 // Look in ./config folder for webpack.dev.js
 switch (process.env.NODE_ENV) {
   case 'prod':

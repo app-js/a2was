@@ -29,8 +29,11 @@ const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
   HMR: HMR
 });
 
-
 const DllBundlesPlugin = require('webpack-dll-bundles-plugin').DllBundlesPlugin;
+
+const HelloWorldPlugin = require('./hello-world');
+
+console.log("wp ---> ./config/webpack.dev -> Merge: ./webpack.common.js");
 
 /**
  * Webpack configuration
@@ -115,6 +118,7 @@ module.exports = function (options) {
           include: [helpers.root('src', 'styles')]
         },
 
+        { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url-loader?limit=10000' }
       ]
 
     },
@@ -207,8 +211,9 @@ module.exports = function (options) {
         }
       }),
 
+      new HelloWorldPlugin({options: true})
     ],
-
+    
     /**
      * Webpack Development Server configuration
      * Description: The webpack-dev-server is a little node.js Express server.

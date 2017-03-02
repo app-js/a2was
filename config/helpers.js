@@ -1,6 +1,8 @@
 /**
  * @author: @AngularClass
  */
+console.log("wp ---> ./config/helpers");
+
 var path = require('path');
 
 const EVENT = process.env.npm_lifecycle_event || '';
