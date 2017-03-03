@@ -31,7 +31,9 @@ const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
 
 const DllBundlesPlugin = require('webpack-dll-bundles-plugin').DllBundlesPlugin;
 
-const HelloWorldPlugin = require('./hello-world');
+const HelloWorldPlugin = require('./hello-world').HelloWorldPlugin;
+const FirstPlugin = require('./hello-world').FirstPlugin;
+const SecondPlugin = require('./hello-world').SecondPlugin;
 
 console.log("wp ---> ./config/webpack.dev -> Merge: ./webpack.common.js");
 
@@ -124,6 +126,8 @@ module.exports = function (options) {
     },
 
     plugins: [
+      new HelloWorldPlugin({options: true}),
+      new FirstPlugin({options: true}),
 
       /**
        * Plugin: DefinePlugin
@@ -210,8 +214,8 @@ module.exports = function (options) {
 
         }
       }),
-
-      new HelloWorldPlugin({options: true})
+      new HelloWorldPlugin({options: true}),
+      new SecondPlugin({options: true})
     ],
     
     /**
