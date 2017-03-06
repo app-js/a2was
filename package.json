@@ -91,9 +91,13 @@
     "webdriver:update": "webdriver-manager update",
     "webpack-dev-server": "webpack-dev-server",
     "webpack": "webpack",
-    "start:desk": "concurrently \"npm run server:dev\" \"electron ./dist/main.desktop.js\"",
-    "dev:win:desk:start": "npm run clean:dll && npm run build:dev && npm run start:desktop:windows"
-  },
+    "b:clean:desktop": "npm run rimraf -- dist desktop dll",
+    "b:desktop:build": "build --win --x64",
+    "b:desktop:windows": "npm run b:clean:desktop && npm run b:prod:desktop && npm run b:desktop:build",
+    "b:prod:desktop": "npm run b:prod:desktop:renderer && npm run b:prod:desktop:main",
+    "b:prod:desktop:main": "webpack --config config/advance/webpack.desktop.build.main.js  --progress --profile --bail",
+    "b:prod:desktop:renderer": "webpack --config config/advance/webpack.desktop.build.renderer.js  --progress --profile --bail"
+},
   "dependencies": {
     "@angular/common": "~2.4.3",
     "@angular/compiler": "~2.4.3",
@@ -144,7 +148,7 @@
     "css-loader": "^0.26.0",
     "devtron": "^1.4.0",
     "electron": "^1.5.0",
-    "electron-builder": "^11.7.0",
+    "electron-builder": "^15.1.0",
     "electron-debug": "^1.0.1",
     "exports-loader": "^0.6.3",
     "expose-loader": "^0.7.1",
@@ -211,7 +215,7 @@
     },
     "win": {
       "target": [
-        "nsis"
+        "portable"
       ]
     },
     "asar": false,
