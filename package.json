@@ -71,8 +71,8 @@
     "server:dev": "webpack-dev-server --config config/advance/webpack.web.dev.js --progress --profile --watch --content-base src/",
     "server:dev:desktop": "webpack --config config/advance/webpack.desktop.dev.js --progress --profile",
     "server:dev:hmr": "npm run server:dev -- --inline --hot",
-    "server:prod": "static dist -a '0.0.0.0' -c false --spa",
-    "server:prod:ci": "static dist -p 3000 -a '0.0.0.0' -c false --spa",
+    "server:prod": "static dist -a localhost -c false --spa",
+    "server:prod:ci": "static dist -p 3000 -a localhost0.0.0.0' -c false --spa",
     "start": "npm run server:dev",
     "start:desktop": "npm run server:dev:desktop && NODE_ENV=development electron ./dist/main.desktop.js",
     "start:desktop:windows": "npm run server:dev:desktop && SET NODE_ENV=development && electron ./dist/main.desktop.js",
@@ -96,7 +96,8 @@
     "b:desktop:windows": "npm run b:clean:desktop && npm run b:prod:desktop && npm run b:desktop:build",
     "b:prod:desktop": "npm run b:prod:desktop:renderer && npm run b:prod:desktop:main",
     "b:prod:desktop:main": "webpack --config config/advance/webpack.desktop.build.main.js  --progress --profile --bail",
-    "b:prod:desktop:renderer": "webpack --config config/advance/webpack.desktop.build.renderer.js  --progress --profile --bail"
+    "b:prod:desktop:renderer": "webpack --config config/advance/webpack.desktop.build.renderer.js  --progress --profile --bail",
+    "dstart": "concurrently \"npm run server:dev\" \"electron ./dist/main.desktop.js\""
 },
   "dependencies": {
     "@angular/common": "~2.4.3",
@@ -149,7 +150,7 @@
     "devtron": "^1.4.0",
     "electron": "^1.5.0",
     "electron-builder": "^15.1.0",
-    "electron-debug": "^1.0.1",
+    "electron-debug": "^1.1.0",
     "exports-loader": "^0.6.3",
     "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "~2.0.0-rc.2",
