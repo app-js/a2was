@@ -79,7 +79,7 @@ module.exports = function(options) {
      * See: http://webpack.github.io/docs/configuration.html#output
      */
     output: {
-
+      devtoolModuleFilenameTemplate: "file://[absolute-resource-path]",
       /**
        * The output directory as absolute path (required).
        *

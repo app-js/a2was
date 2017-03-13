@@ -55,13 +55,16 @@
             "request": "launch",
             "cwd": "${workspaceRoot}",
             "env": {
-                "NODE_ENV": "production"
+                "NODE_ENV": "development"
             },
+            "runtimeArgs": [
+              "--nolazy"
+            ],
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
             "program": "${workspaceRoot}/electron/main.desktop.ts",
             "sourceMaps": true,
             "protocol": "legacy",
             "outFiles": [ "${workspaceRoot}/dist/**/*.js" ]
-        }
+          }
     ]
 }

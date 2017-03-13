@@ -17,7 +17,7 @@ let menu: any;
 console.log("2");
 
 // app
-import { DesktopConfig } from 'shared/electron/index';
+import { DesktopConfig } from '../src/app/shared/electron/index';
 
 /*crashReporter.start({
   productName: 'Angular2WebpackAdvanceStarter',
@@ -73,7 +73,7 @@ app.on('ready', () => {
     console.log(`Page navigated: ${url}`);
   });
 
-  let appTitle: string = `Angular 2 Webpack Advance Starter`;
+  let appTitle: string = `a2was`;
 
   let langMenu: any = {
     label: 'Language',
