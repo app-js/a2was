@@ -24,13 +24,44 @@
             "webRoot": "${workspaceRoot}"
         },
         {
-            "name": "Debug Electron Main Process",
+            "name": "Electron Main",
             "type": "node",
             "request": "launch",
             "cwd": "${workspaceRoot}",
+            "env": {
+                "NODE_ENV": "development"
+            },
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
             "program": "${workspaceRoot}/electron/main.js",
+            "sourceMaps": true,
             "protocol": "legacy"
+        },
+        {
+            "name": "Electron Main 2",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
+            "program": "${workspaceRoot}/dist/main.desktop.js",
+            "sourceMaps": true,
+            "protocol": "legacy"
+        },
+        {
+            "name": "Electron Main ts",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "env": {
+                "NODE_ENV": "production"
+            },
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
+            "program": "${workspaceRoot}/electron/main.desktop.ts",
+            "sourceMaps": true,
+            "protocol": "legacy",
+            "outFiles": [ "${workspaceRoot}/dist/**/*.js" ]
         }
     ]
 }
