@@ -5,5 +5,5 @@
   "author": "J S",
   "homepage": "https://github.com/app-js/a2was",
   "license": "MIT",
-  "main": "main.bundle.js"
+  "main": "main.desktop.bundle.js"
 }

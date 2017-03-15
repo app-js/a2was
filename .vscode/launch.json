@@ -2,18 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceRoot}/src/app/index.ts",
-            "sourceMaps": true,
-            "outFiles": [ "${workspaceRoot}/dist/**/*.js" ]
-       },
-        {
             "name": "Launch Chrome against localhost, with sourcemaps",
             "type": "chrome",
             "request": "launch",
-            "url": "http://localhost:3000/*",
+            "url": "http://localhost:3000",
             "runtimeArgs": [
               "--disable-web-security",
               "--user-data-dir",
@@ -57,9 +49,18 @@
             ],
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
             "program": "${workspaceRoot}/electron/main.desktop.ts",
-            "sourceMaps": true,
             "protocol": "legacy",
+            "sourceMaps": true,
             "outFiles": [ "${workspaceRoot}/dist/**/*.js" ]
-          }
+        },
+        {
+            "name": "Launch Program",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/src/app/index.ts",
+            "protocol": "legacy",
+            "sourceMaps": true,
+            "outFiles": [ "${workspaceRoot}/dist/**/*.js" ]
+        }
     ]
 }

@@ -222,7 +222,7 @@
         "dir"
       ]
     },
-    "asar": false,
+    "asar": true,
     "directories": {
       "buildResources": "src/assets",
       "output": "desktop",
