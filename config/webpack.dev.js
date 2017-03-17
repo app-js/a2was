@@ -51,8 +51,9 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#devtool
      * See: https://github.com/webpack/docs/wiki/build-performance#sourcemaps
      */
-/*    devtool: 'cheap-module-source-map',
-*/    devtool: 'source-map',
+      //devtool: 'cheap-module-source-map',
+      //fuer web-debug
+      devtool: 'source-map',
 
     /**
      * Options affecting the output of the compilation.
@@ -60,7 +61,8 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#output
      */
     output: {
-      devtoolModuleFilenameTemplate: "file://[absolute-resource-path]",
+
+      //devtoolModuleFilenameTemplate: "file://[absolute-resource-path]",
 
       /**
        * The output directory as absolute path (required).

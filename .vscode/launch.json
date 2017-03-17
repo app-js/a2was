@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Chrome against localhost, with sourcemaps",
+            "name": "WEB-Debug mit sourcemaps",
             "type": "chrome",
             "request": "launch",
             "url": "http://localhost:3000",
@@ -15,7 +15,7 @@
             "webRoot": "${workspaceRoot}"
         },
         {
-            "name": "Attach to Chrome, with sourcemaps",
+            "name": "Attach WEB-Debug mit sourcemaps",
             "type": "chrome",
             "request": "attach",
             "url": "http://localhost:3000/*",
@@ -54,13 +54,18 @@
             "outFiles": [ "${workspaceRoot}/dist/**/*.js" ]
         },
         {
-            "name": "Launch Program",
-            "type": "node",
+            "name": "Electron Renderer TS",
+            "type": "chrome",
             "request": "launch",
-            "program": "${workspaceRoot}/src/app/index.ts",
-            "protocol": "legacy",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
+            "runtimeArgs": [
+                "${workspaceRoot}/dist",
+                "--enable-logging",
+                "--remote-debugging-port=9222"
+            ],
+            "webRoot": "${workspaceRoot}/dist",
             "sourceMaps": true,
-            "outFiles": [ "${workspaceRoot}/dist/**/*.js" ]
+            "internalConsoleOptions": "openOnSessionStart"
         }
     ]
 }

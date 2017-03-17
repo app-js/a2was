@@ -1,0 +1,8 @@
+WEB Debug:
+In der Console -> npm run server:dev
+In VSCode -> Launch WEB-Debug mit sourcemaps
+
+Electron Main Debug:
+In der Console -> npm run b:dev:desktop
+In der Console -> npm run server:dev
+In VSCode -> Launch Electron Main TS

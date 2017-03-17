@@ -97,7 +97,7 @@
     "b:prod:desktop": "npm run b:prod:desktop:renderer && npm run b:prod:desktop:main",
     "b:prod:desktop:main": "webpack --config config/advance/webpack.desktop.build.main.js  --progress --profile --bail",
     "b:prod:desktop:renderer": "webpack --config config/advance/webpack.desktop.build.renderer.js  --progress --profile --bail",
-    "b:dev:desktop": "npm run b:dev:desktop:renderer && npm run b:dev:desktop:main",
+    "b:dev:desktop": "npm run b:clean:desktop && npm run b:dev:desktop:renderer && npm run b:dev:desktop:main",
     "b:dev:desktop:main": "webpack --config config/advance/webpack.desktop.dev.js --progress --profile --bail",
     "b:dev:desktop:renderer": "webpack --config config/advance/webpack.web.dev.js --progress --profile --bail",
     "dstart": "concurrently \"npm run server:dev\" \"electron ./dist/main.desktop.js\""
