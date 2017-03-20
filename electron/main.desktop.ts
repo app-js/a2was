@@ -1,8 +1,6 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 console.log(`main.desktop.ts -> Electron launching with NODE_ENV: ${process.env.NODE_ENV}`);
 
-console.log("3");
-
 // electron
 const electron: any = require('electron');
 const app: any = electron.app;
@@ -14,8 +12,6 @@ let mainWindow: any = undefined;
 let template: any;
 let menu: any;
 
-console.log("2");
-
 // app
 import { DesktopConfig } from '../src/app/shared/electron/index';
 
@@ -26,13 +22,9 @@ import { DesktopConfig } from '../src/app/shared/electron/index';
   autoSubmit: true
 });*/
 
-console.log("1");
-
 if (process.env.NODE_ENV === 'development') {
   require('electron-debug')();
 }
-
-console.log("0");
 
 app.on('window-all-closed', () => {
   console.log("on window-all-closed");

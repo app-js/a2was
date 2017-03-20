@@ -61,8 +61,7 @@ module.exports = function (options) {
     entry: {
 
       'polyfills': './src/polyfills.browser.ts',
-      'main':      AOT ? './src/main.browser.aot.ts' :
-                  './src/main.browser.ts'
+      'main':      AOT ? './src/main.browser.aot.ts' : './src/main.browser.ts'
 
     },
 

@@ -22,6 +22,9 @@ const ENV = process.env.ENV = process.env.NODE_ENV = 'development';
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 3000;
 const HMR = helpers.hasProcessFlag('hot');
+
+console.log("wp ---> ./config/webpack.dev -> Merge: ./webpack.common.js=>metadata ./config/webpack.dev=>METADATA");
+
 const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
   host: HOST,
   port: PORT,
@@ -31,11 +34,11 @@ const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
 
 const DllBundlesPlugin = require('webpack-dll-bundles-plugin').DllBundlesPlugin;
 
-const HelloWorldPlugin = require('./hello-world').HelloWorldPlugin;
-const FirstPlugin = require('./hello-world').FirstPlugin;
-const SecondPlugin = require('./hello-world').SecondPlugin;
+// const HelloWorldPlugin = require('./hello-world').HelloWorldPlugin;
+// const FirstPlugin = require('./hello-world').FirstPlugin;
+// const SecondPlugin = require('./hello-world').SecondPlugin;
 
-console.log("wp ---> ./config/webpack.dev -> Merge: ./webpack.common.js");
+console.log("wp ---> ./config/webpack.dev -> Merge: ./webpack.common.js ./config/webpack.dev");
 
 /**
  * Webpack configuration
@@ -130,8 +133,8 @@ module.exports = function (options) {
     },
 
     plugins: [
-      new HelloWorldPlugin({options: true}),
-      new FirstPlugin({options: true}),
+      // new HelloWorldPlugin({options: true}),
+      // new FirstPlugin({options: true}),
 
       /**
        * Plugin: DefinePlugin
@@ -218,8 +221,8 @@ module.exports = function (options) {
 
         }
       }),
-      new HelloWorldPlugin({options: true}),
-      new SecondPlugin({options: true})
+      // new HelloWorldPlugin({options: true}),
+      // new SecondPlugin({options: true})
     ],
     
     /**

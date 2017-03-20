@@ -19,7 +19,7 @@ let webpackConfig = simpleWebDevConfig({env: ENV});
 // remove the instance of HtmlWebpackPlugin.
 helpers.removePlugins(webpackConfig.plugins, [HtmlWebpackPlugin]);
 
-console.log("wp ---> ./config/advance/webpack.web.dev");
+console.log("wp ---> ./config/advance/webpack.web.dev -> Merge: ../webpack.dev.js ./webpack.common.web.js {} ../custom/webpack.web.dev.js");
 
 /**
  * Webpack configuration
@@ -27,7 +27,9 @@ console.log("wp ---> ./config/advance/webpack.web.dev");
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
 module.exports = function(options) {
-	return webpackMerge.smart(webpackConfig, commonAdvanceConfig({env: ENV}), {
-
-	}, customConfig({env: ENV}));
+	return webpackMerge.smart(webpackConfig,
+							  commonAdvanceConfig({env: ENV}), 
+							  {	},
+							  customConfig({env: ENV})
+							 );
 }
