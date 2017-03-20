@@ -23,7 +23,7 @@ const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 3000;
 const HMR = helpers.hasProcessFlag('hot');
 
-console.log("wp ---> ./config/webpack.dev -> Merge: ./webpack.common.js=>metadata ./config/webpack.dev=>METADATA");
+console.log("wp ---> ./config/webpack.dev -> Merge: ./webpack.common.js=>metadata ./config/webpack.dev.js=>METADATA");
 
 const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
   host: HOST,
@@ -38,7 +38,7 @@ const DllBundlesPlugin = require('webpack-dll-bundles-plugin').DllBundlesPlugin;
 // const FirstPlugin = require('./hello-world').FirstPlugin;
 // const SecondPlugin = require('./hello-world').SecondPlugin;
 
-console.log("wp ---> ./config/webpack.dev -> Merge: ./webpack.common.js ./config/webpack.dev");
+console.log("wp ---> ./config/webpack.dev -> Merge: ./webpack.common.js ./config/webpack.dev.js");
 
 /**
  * Webpack configuration

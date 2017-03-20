@@ -23,7 +23,7 @@ const METADATA = Object.assign({
   isDevServer: helpers.isWebpackDevServer()
 }, customConfig.metadata);
 
-console.log("wp ---> ./config/advance/webpack.common");
+console.log("wp ---> ./config/advance/webpack.common -> Merge(smart): ./webpack.common.js ../custom/webpack.common.js");
 
 /**
  * Webpack configuration
