@@ -59,7 +59,7 @@
             "request": "launch",
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
             "runtimeArgs": [
-                "${workspaceRoot}/dist",
+                "${workspaceRoot}/dist/main.desktop.js",
                 "--enable-logging",
                 "--remote-debugging-port=9222"
             ],

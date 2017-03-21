@@ -17,6 +17,8 @@ const DefinePlugin = require('webpack/lib/DefinePlugin');
  */
 const ENV = process.env.ENV = process.env.NODE_ENV = 'development';
 
+console.log("wp ---> ./config/advance/webpack.desktop.dev -> Merge(smart): ../custom/webpack.desktop.dev.js");
+
 /**
  * Webpack configuration
  *
@@ -126,7 +128,7 @@ module.exports = function(options) {
       })()
     ],
 
-    target: 'electron',
+    target: 'electron-main',
 
     node: {
       __dirname: false,

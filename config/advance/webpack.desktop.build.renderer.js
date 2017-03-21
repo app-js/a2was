@@ -16,6 +16,7 @@ const customConfig = require('../custom/webpack.web.prod.js');
 const ENV = process.env.ENV = process.env.NODE_ENV = 'production';
 const AOT = helpers.hasNpmFlag('aot');
 
+console.log("wp ---> ./config/advance/webpack.desktop.build.renderer ENV=" + ENV);
 /**
  * Webpack Plugins
  */
@@ -29,6 +30,8 @@ const METADATA = Object.assign({
   baseUrl: '',
   isDevServer: helpers.isWebpackDevServer()
 }, customConfig.metadata);
+
+console.log("wp ---> ./config/advance/webpack.desktop.build.renderer -> Merge(smart): ../webpack.prod.js ./webpack.common.web.js");
 
 let webpackConfig = webpackMerge.smart(simpleWebProdConfig({env: ENV}), commonAdvanceConfig({env: ENV}));
 
@@ -45,6 +48,8 @@ helpers.removeRules(webpackConfig.module.rules, [/\.ts$/]);
  *
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
+console.log("wp ---> ./config/advance/webpack.desktop.build.renderer -> Merge(smart): this->webpackConfig ./webpack.desktop.build.renderer");
+
 module.exports = function(options) {
   isProd = ENV === 'production';
 
