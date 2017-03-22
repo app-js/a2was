@@ -6,14 +6,14 @@ const helpers = require('./helpers');
 const webpackMerge = require('webpack-merge'); // used to merge webpack configs
 
 const commonAdvanceConfig = require('./webpack.common.web.js');
-const simpleWebProdConfig = require('../webpack.prod.js');
+const simpleWebProdConfig = require('../webpack.dev.js');
 const customCommonConfig = require('../custom/webpack.common.js');
-const customConfig = require('../custom/webpack.web.prod.js');
+const customConfig = require('../custom/webpack.web.dev.js');
 
 /**
  * Webpack Constants
  */
-const ENV = process.env.ENV = process.env.NODE_ENV = 'production';
+const ENV = process.env.ENV = process.env.NODE_ENV = 'development';
 const AOT = helpers.hasNpmFlag('aot');
 
 console.log("wp ---> ./config/advance/webpack.desktop.dev.renderer ENV=" + ENV);
@@ -31,7 +31,7 @@ const METADATA = Object.assign({
   isDevServer: helpers.isWebpackDevServer()
 }, customConfig.metadata);
 
-console.log("wp ---> ./config/advance/webpack.desktop.dev.renderer -> Merge(smart): ../webpack.prod.js ./webpack.common.web.js");
+console.log("wp ---> ./config/advance/webpack.desktop.dev.renderer -> Merge(smart): ../webpack.dev.js ./webpack.common.web.js");
 
 let webpackConfig = webpackMerge.smart(simpleWebProdConfig({env: ENV}), commonAdvanceConfig({env: ENV}));
 
@@ -48,7 +48,7 @@ helpers.removeRules(webpackConfig.module.rules, [/\.ts$/]);
  *
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
-console.log("wp ---> ./config/advance/webpack.desktop.dev.renderer -> Merge(smart): this->webpackConfig ./webpack.desktop.build.renderer");
+console.log("wp ---> ./config/advance/webpack.desktop.dev.renderer -> Merge(smart): this->webpackConfig this->./webpack.desktop.dev.renderer");
 
 module.exports = function(options) {
   isProd = ENV === 'production';
@@ -108,6 +108,10 @@ module.exports = function(options) {
         metadata: METADATA,
         inject: 'head'
       }),
-    ]
+    ],
+
+    target: 'electron-renderer'
+
   }, customConfig({env: ENV}));
+
 }

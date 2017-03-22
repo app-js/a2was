@@ -72,7 +72,7 @@
     "server:dev:desktop": "webpack --config config/advance/webpack.desktop.dev.js --progress --profile",
     "server:dev:hmr": "npm run server:dev -- --inline --hot",
     "server:prod": "static dist -a localhost -c false --spa",
-    "server:prod:ci": "static dist -p 3000 -a localhost0.0.0.0' -c false --spa",
+    "server:prod:ci": "static dist -p 3000 -a localhost -c false --spa",
     "start": "npm run server:dev",
     "start:desktop": "npm run server:dev:desktop && NODE_ENV=development electron ./dist/main.desktop.js",
     "start:desktop:windows": "npm run server:dev:desktop && SET NODE_ENV=development && electron ./dist/main.desktop.js",

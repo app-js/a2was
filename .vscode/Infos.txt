@@ -1,8 +1,13 @@
-WEB Debug:
+WEB-Debug mit sourcemaps:
 In der Console -> npm run server:dev
+!!! Es darf keine Chrome-Instanz laufen !!! Ist erledigt mit -> "userDataDir": "${workspaceRoot}/.vscode/chrome"
 In VSCode -> Launch WEB-Debug mit sourcemaps
 
-Electron Main Debug:
+Electron Main TS:
 In der Console -> npm run b:dev:desktop
 In der Console -> npm run server:dev
 In VSCode -> Launch Electron Main TS
+
+Electron Renderer TS:
+In der Console -> npm run b:dev:desktop
+In VSCode -> Launch Electron Renderer TS

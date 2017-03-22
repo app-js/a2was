@@ -83,3 +83,6 @@ dll/
 !/nativescript/references.d.ts
 /desktop/
 /_temp/
+
+# chrome #
+.vscode/chrome

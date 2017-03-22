@@ -40,6 +40,7 @@ export class HomeComponent {
   public readAbout() {
     // Try this in the {N} app
     // {N} can use these animation options
+    console.log("going to about");
     this.routerext.navigate(['/about'], {
       transition: {
         duration: 1000,

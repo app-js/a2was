@@ -5,14 +5,21 @@
             "name": "WEB-Debug mit sourcemaps",
             "type": "chrome",
             "request": "launch",
-            "url": "http://localhost:3000",
+            "url": "http://localhost:3000/",
             "runtimeArgs": [
               "--disable-web-security",
-              "--user-data-dir",
+              //"--user-data-dir",
               "--remote-debugging-port=9222"
             ],
             "sourceMaps": true,
-            "webRoot": "${workspaceRoot}"
+            "webRoot": "${workspaceRoot}",
+            "userDataDir": "${workspaceRoot}/.vscode/chrome",
+            //"trace": "verbose", //Er erzaehlt dir alles
+            "sourceMapPathOverrides": {
+                "webpack:///./*":   "${webRoot}/*",                                // Example: "webpack:///./src/app.js" -> "/users/me/project/src/app.js",
+                "webpack:///./~/*": "${workspaceRoot}/node_modules/*" // Example: "webpack:///./~/querystring/index.js" -> "/Users/me/project/node_modules/querystring/index.js"
+            //         //  "webpack:///*":     "*"                                // Example: "webpack:///C:/project/app.ts" -> "C:/project/app.ts"
+            }
         },
         {
             "name": "Attach WEB-Debug mit sourcemaps",
@@ -63,9 +70,16 @@
                 "--enable-logging",
                 "--remote-debugging-port=9222"
             ],
-            "webRoot": "${workspaceRoot}/dist",
+            "webRoot": "${workspaceRoot}",
             "sourceMaps": true,
-            "internalConsoleOptions": "openOnSessionStart"
+            "internalConsoleOptions": "openOnSessionStart",
+            //Entweder hier "sourceMaps" anpassen, oder
+            //in webpack.dev.js devtoolModuleFilenameTemplate: "[absolute-resource-path]" eintragen (unter output:), oder beides.
+            "sourceMapPathOverrides": {
+                "webpack:///./*":   "${webRoot}/*",                                // Example: "webpack:///./src/app.js" -> "/users/me/project/src/app.js",
+                "webpack:///./~/*": "${workspaceRoot}/node_modules/*" // Example: "webpack:///./~/querystring/index.js" -> "/Users/me/project/node_modules/querystring/index.js"
+            //         //  "webpack:///*":     "*"                                // Example: "webpack:///C:/project/app.ts" -> "C:/project/app.ts"
+            }
         }
     ]
 }
