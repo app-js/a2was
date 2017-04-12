@@ -11,3 +11,10 @@ In VSCode -> Launch Electron Main TS
 Electron Renderer TS:
 In der Console -> npm run b:dev:desktop
 In VSCode -> Launch Electron Renderer TS
+
+Bei lodash Fehlern:
+Depends on the ts that you run,
+2.0, 2.1, 2.2
+for example, to use newer u may use:
+npm install @types/lodash@ts2.1 --save-dev
+

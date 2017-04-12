@@ -2,7 +2,12 @@
   "name": "a2was",
   "version": "0.0.1",
   "description": "Testing webpack.",
-  "keywords": ["angular2","webpack","typescript","electron"],
+  "keywords": [
+    "angular2",
+    "webpack",
+    "typescript",
+    "electron"
+  ],
   "author": "J S",
   "homepage": "https://github.com/app-js/a2was",
   "license": "MIT",
@@ -93,6 +98,8 @@
     "webpack": "webpack",
     "b:clean:desktop": "npm run rimraf -- dist desktop dll",
     "b:desktop:build": "build --win --x64",
+    "b:desktop:build:mac": "build --mac --x64",
+    "b:desktop:mac": "npm run b:clean:desktop && npm run b:prod:desktop && npm run b:desktop:build:mac",
     "b:desktop:windows": "npm run b:clean:desktop && npm run b:prod:desktop && npm run b:desktop:build",
     "b:prod:desktop": "npm run b:prod:desktop:renderer && npm run b:prod:desktop:main",
     "b:prod:desktop:main": "webpack --config config/advance/webpack.desktop.build.main.js  --progress --profile --bail",
@@ -101,7 +108,7 @@
     "b:dev:desktop:main": "webpack --config config/advance/webpack.desktop.dev.js --progress --profile --bail",
     "b:dev:desktop:renderer": "webpack --config config/advance/webpack.desktop.dev.renderer.js --progress --profile --bail",
     "dstart": "concurrently \"npm run server:dev\" \"electron ./dist/main.desktop.js\""
-},
+  },
   "dependencies": {
     "@angular/common": "~2.4.3",
     "@angular/compiler": "~2.4.3",
@@ -135,7 +142,7 @@
     "@ngrx/store-devtools": "^3.2.2",
     "@types/hammerjs": "^2.0.34",
     "@types/jasmine": "^2.5.40",
-    "@types/lodash": "^4.14.46",
+    "@types/lodash": "^4.14.56",
     "@types/node": "^7.0.0",
     "@types/selenium-webdriver": "2.53.39",
     "@types/source-map": "^0.5.0",
